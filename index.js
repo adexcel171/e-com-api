@@ -12,7 +12,7 @@ const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 
 
-mongoose.connect( "mongodb+srv://godswill:unlimited1@cluster0.mjfq3nb.mongodb.net/shop?retryWrites=true&w=majority").then(() => console.log("DB Connection Successfull!"))
+mongoose.connect(process.env.MONGO_URL, () => console.log("DB Connection Successfull!"))
   .catch((err) => {
     console.log(err);
   });

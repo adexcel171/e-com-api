@@ -7,6 +7,10 @@ const {
 
 const router = require("express").Router();
 
+router.get("/usertest/", (req, res) =>{
+  res.send('user is successful');
+})
+
 //UPDATE
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
   if (req.body.password) {
@@ -90,5 +94,6 @@ router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
